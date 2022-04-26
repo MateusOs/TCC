@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: 'main#index' 
   get 'about', to: 'about#index'
+  get 'novoUsuario', to: 'registrations#new'
+  post 'novoUsuario', to: 'registrations#create'
 end

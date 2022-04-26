@@ -1,0 +1,35 @@
+<h1>Criação de Usuários</h1>
+<%= form_with model: @usuarios, url: novoUsuario_path do |form| %>
+<div class="mb-3">
+	<%= form.label "Nome" %>
+	<%= form.text_field :nome, :required => true, class: "form-control", placeholder:"Digite seu nome" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Login" %>
+	<%= form.text_field :login, :required => true, class: "form-control", placeholder:"Digite seu login" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Senha" %>
+	<%= form.password_field :password, :required => true, class: "form-control" , placeholder:"Digite sua senha"%>
+</div>	
+<div class="mb-3">
+	<%= form.label "Confirmação de senha" %>
+	<%= form.password_field :password_confirmation, :required => true, class: "form-control", placeholder:"Confirme sua senha" %>
+</div>
+<div class="mb-3">
+	<%= form.label "E-mail" %>
+	<%= form.text_field :email, :required => true, class: "form-control" , placeholder:"Digite seu e-mail" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Tipo de usuário" %>
+	<%= form.select :tipoUsuario, ["","Administrador", "Aluno", "Professor"], class: "form-control" %>
+</div>	
+<div class="mb-3">
+	<%= form.label "Telefone" %>
+	<%= form.telephone_field :fone, class: "form-control" , placeholder:"Digite seu telefone"%>
+</div>	
+<div class="mb-3">
+	<%= form.submit "Criar usuário", class:"btn btn-primary" %>
+</div>
+<% end %>
+
