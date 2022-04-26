@@ -4,7 +4,7 @@ class RegistrationsController < ApplicationController
 	end
 
 	def create
-		@usuario = Usuario.new()
+		@usuario = Usuario.new
 		if @usuario.save
 			redirect_to root_path
 		else

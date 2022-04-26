@@ -3,7 +3,7 @@
 one:
   nome: MyString
   login: MyString
-  senha: MyString
+  password: MyString
   confimaSenha: MyString
   email: MyString
   tipoUsuario: MyString
@@ -12,7 +12,7 @@ one:
 two:
   nome: MyString
   login: MyString
-  senha: MyString
+  password: MyString
   confimaSenha: MyString
   email: MyString
   tipoUsuario: MyString

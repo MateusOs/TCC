@@ -1,5 +1,12 @@
 <h1>Criação de Usuários</h1>
-<%= form_with model: @usuarios, url: novoUsuario_path do |form| %>
+<% if @usuario.errors.any? %>
+	<div class="alert alert-danger">
+		<%= @usuario.errors.full_messages.each do |message| %>
+			<div><%= message%></div>
+		<% end %>
+	</div>
+<% end%>
+<%= form_with model: @usuario, url: novoUsuario_path do |form| %>
 <div class="mb-3">
 	<%= form.label "Nome" %>
 	<%= form.text_field :nome, :required => true, class: "form-control", placeholder:"Digite seu nome" %>
@@ -12,10 +19,6 @@
 	<%= form.label "Senha" %>
 	<%= form.password_field :password, :required => true, class: "form-control" , placeholder:"Digite sua senha"%>
 </div>	
-<div class="mb-3">
-	<%= form.label "Confirmação de senha" %>
-	<%= form.password_field :password_confirmation, :required => true, class: "form-control", placeholder:"Confirme sua senha" %>
-</div>
 <div class="mb-3">
 	<%= form.label "E-mail" %>
 	<%= form.text_field :email, :required => true, class: "form-control" , placeholder:"Digite seu e-mail" %>
