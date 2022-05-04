@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require 'bcrypt'
 class Usuario < ApplicationRecord
 	include BCrypt
@@ -9,4 +10,8 @@ class Usuario < ApplicationRecord
     validates :email, presence: true
     validates :tipoUsuario, presence: true
     validates :fone, presence: true
+=======
+class Usuario < ActiveRecord::Base
+	
+>>>>>>> 20c13ac7135706f8aa8388ddf24b7b7872722a93
 end

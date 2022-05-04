@@ -14,8 +14,12 @@ class RegistrationsController < ApplicationController
 	end 
 
 
+	def index
+		@usuario = Usuario.all
+	end
+
 	private
 	def usuario_params
-		params.require(:usuario).permit(:email) 
-	end
+		params.require(:usuario).permit(:nome, :login, :senha, :email, :tipoUsuario, :fone)
+	end	
 end
