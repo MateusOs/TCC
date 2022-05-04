@@ -1,3 +1,12 @@
+require 'bcrypt'
 class Usuario < ApplicationRecord
-	#validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "E-mail tem que ser válido" }
+	include BCrypt
+	#has_secure_password
+	
+    validates :nome, presence: true
+    validates :login, presence: true
+    validates :senha, presence: true
+    validates :email, presence: true
+    validates :tipoUsuario, presence: true
+    validates :fone, presence: true
 end

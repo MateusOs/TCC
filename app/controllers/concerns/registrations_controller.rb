@@ -1,10 +1,11 @@
 class RegistrationsController < ApplicationController
+	
 	def new
 		@usuario = Usuario.new
 	end
 
 	def create
-		@usuario = Usuario.new
+		@usuario = Usuario.new(usuario_params)
 		if @usuario.save
 			redirect_to root_path
 		else
@@ -12,9 +13,9 @@ class RegistrationsController < ApplicationController
 		end
 	end 
 
+
 	private
-
 	def usuario_params
-
-	end	
+		params.require(:usuario).permit(:email) 
+	end
 end
