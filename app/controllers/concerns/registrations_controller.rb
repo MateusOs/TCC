@@ -12,6 +12,10 @@ class RegistrationsController < ApplicationController
 		end
 	end 
 
+	def index
+		@usuario = Usuario.all
+	end
+
 	private
 
 	def usuario_params
