@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'about', to: 'about#index'
   get 'novoUsuario', to: 'registrations#new'
   post 'novoUsuario', to: 'registrations#create'
+  get 'usuariosList', to: 'registrations#index'
 end

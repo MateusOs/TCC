@@ -1,0 +1,41 @@
+<h1>Usuários</h1>
+
+<div>
+  <div class="row">
+    <div class="col col-sm-2 p-2 bg-light border">
+      <strong>Nome</strong>
+    </div>
+    <div class="col p-2 bg-light border">
+      <strong>Email</strong>
+    </div>
+    <div class="col p-2 bg-light border">
+      <strong>Tipo de usuário</strong>
+    </div>
+  </div>
+</div>
+
+<table>
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Email</th>
+			<th>Tipo de usuário</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @usuario.each do |usuario| %>
+			<tr>
+				<td><%= usuario.nome %></td>
+				<td><%= usuario.email %></td>
+				<td><%= usuario.tipoUsuario %></td>
+				<td>Visualizar </td>
+				<td>Editar </td>
+				<td>Deletar </td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
