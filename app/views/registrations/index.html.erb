@@ -2,40 +2,49 @@
 
 <div>
   <div class="row">
-    <div class="col col-sm-2 p-2 bg-light border">
+    <div class="col col-sm-3 p-2 bg-light border">
       <strong>Nome</strong>
     </div>
-    <div class="col p-2 bg-light border">
+    <div class="col col-sm-4 col p-2 bg-light border">
       <strong>Email</strong>
     </div>
-    <div class="col p-2 bg-light border">
+    <div class="col col-sm-2 col p-2 bg-light border">
       <strong>Tipo de usuário</strong>
+    </div>
+    <div class="col col-sm-1 col p-2 bg-light border">
+      <strong>Editar</strong>
+    </div>
+    <div class="col col-sm-1 col p-2 bg-light border">
+      <strong>Deletar</strong>
+    </div>
+    <div class="col col-sm-1 col p-2 bg-light border">
+      <strong>Visualizar</strong>
     </div>
   </div>
 </div>
 
-<table>
-	<thead>
-		<tr>
-			<th>Nome</th>
-			<th>Email</th>
-			<th>Tipo de usuário</th>
-			<th></th>
-			<th></th>
-			<th></th>
-		</tr>
-	</thead>
 
-	<tbody>
-		<% @usuario.each do |usuario| %>
-			<tr>
-				<td><%= usuario.nome %></td>
-				<td><%= usuario.email %></td>
-				<td><%= usuario.tipoUsuario %></td>
-				<td>Visualizar </td>
-				<td>Editar </td>
-				<td>Deletar </td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
+<div>
+  <div class="row">
+  	<% @usuario.each do |usuario| %>
+	    <div class="col col-sm-3 p-2 bg-light border">
+	      <%= usuario.nome %>
+	    </div>
+	    <div class="col col-sm-4 col p-2 bg-light border">
+	      <td><%= usuario.email %></td>
+	    </div>
+	    <div class="col col-sm-2 col p-2 bg-light border">
+	      <td><%= usuario.tipoUsuario %></td>
+	    </div>
+	    <div class="col col-sm-1 col p-2 bg-light border">
+	    	<%= link_to image_tag("edit.jpg", height: 25), novoUsuario_path, class: "nav-link" %>
+	    </div>
+	    <div class="col col-sm-1 col p-2 bg-light border">
+	    	<%= link_to image_tag("delete.png", height: 25), novoUsuario_path, class: "nav-link" %>
+	    </div>
+	    <div class="col col-sm-1 col p-2 bg-light border">
+	    	<%= link_to image_tag("view.png", height: 25), novoUsuario_path, class: "nav-link" %>
+	    </div>
+    <% end %>
+  </div>
+</div>
