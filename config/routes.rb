@@ -5,7 +5,14 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: 'main#index' 
   get 'about', to: 'about#index'
-  get 'novoUsuario', to: 'registrations#new'
-  post 'novoUsuario', to: 'registrations#create'
-  get 'usuariosList', to: 'registrations#index'
+
+  get 'registrations', to: 'registrations#index'
+  post 'registrations', to: 'registrations#create'
+  get 'registrations/new', to: 'registrations#new'
+  get 'registrations/:id/edit', to: 'registrations#edit', as: 'edit_registration'
+  get 'registrations/:id', to: 'registrations#show', as: 'show_registration'
+  patch 'registrations/:id', to: 'registrations#update'
+  put 'registrations/:id', to: 'registrations#update'
+  delete 'registrations/:id', to: 'registrations#destroy', as: 'destroy_registration'
+
 end
