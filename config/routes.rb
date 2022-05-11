@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get 'registrations/:id', to: 'registrations#show', as: 'show_registration'
   patch 'registrations/:id', to: 'registrations#update', as: 'update_registration'
   put 'registrations/:id', to: 'registrations#update'
-  delete 'registrations/:id', to: 'registrations#destroy', as: 'destroy_registration'
-
+  delete 'registrations/:id/delete', to: 'registrations#destroy', as: 'destroy_registration'
+  get 'registrations/:id/delete', to: 'registrations#destroy'
 end

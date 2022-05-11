@@ -6,6 +6,7 @@ class RegistrationsController < ApplicationController
 	end
 
 	def show
+		@usuario = Usuario.find(params[:id])
 	end
 	
 	def new
@@ -16,6 +17,7 @@ class RegistrationsController < ApplicationController
 		@usuario = Usuario.new(usuario_params)
 		if @usuario.save
 			redirect_to registrations_path
+			flash[:notice] = "Usuario adicionado"
 		else
 			render :new
 		end
@@ -29,6 +31,7 @@ class RegistrationsController < ApplicationController
 	def update
 		@usuario = Usuario.find(params[:id])
 		if @usuario.update(usuario_params)
+			flash[:notice] = "Usuario atualizado"
 			redirect_to registrations_path
 		else
 			flash.now[:error] = "Erro ao salvar!"
@@ -39,7 +42,8 @@ class RegistrationsController < ApplicationController
 
 	def destroy
 		@usuario = Usuario.find(params[:id])
-		@usuario.destroy
+		@usuario.destroy		
+		flash[:notice] = "Usuario deletado"
 		redirect_to registrations_path
 	end
 

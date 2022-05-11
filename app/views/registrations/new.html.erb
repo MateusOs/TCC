@@ -1,6 +1,18 @@
 <h1>Criação de Usuários</h1>
 
 <%= form_for @usuario, url: registrations_new_path do |form| %>
+<% if @usuario.errors.any? %>
+<div id="error_explanation">
+	<div class="alert-error">
+		O formulário contém <%= pluralize(@usuario.errors.count, "erro") %>.
+	</div>
+	<ul>
+		<% @usuario.errors.full_messages.each do |msg| %>
+		<li><% msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
 <div class="mb-3">
 	<%= form.label "Nome" %>
 	<%= form.text_field :nome, :required => true, class: "form-control", placeholder:"Digite seu nome" %>
