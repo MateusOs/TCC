@@ -27,6 +27,7 @@ class RegistrationsController < ApplicationController
 	end
 
 	def update
+		@usuario = Usuario.find(params[:id])
 		if @usuario.update(usuario_params)
 			redirect_to registrations_path
 		else
@@ -37,6 +38,7 @@ class RegistrationsController < ApplicationController
 	end
 
 	def destroy
+		@usuario = Usuario.find(params[:id])
 		@usuario.destroy
 		redirect_to registrations_path
 	end

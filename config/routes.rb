@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   get 'about', to: 'about#index'
 
   get 'registrations', to: 'registrations#index'
-  post 'registrations', to: 'registrations#create'
+  post 'registrations/new', to: 'registrations#create'
   get 'registrations/new', to: 'registrations#new'
   get 'registrations/:id/edit', to: 'registrations#edit', as: 'edit_registration'
   get 'registrations/:id', to: 'registrations#show', as: 'show_registration'
-  patch 'registrations/:id', to: 'registrations#update'
+  patch 'registrations/:id', to: 'registrations#update', as: 'update_registration'
   put 'registrations/:id', to: 'registrations#update'
   delete 'registrations/:id', to: 'registrations#destroy', as: 'destroy_registration'
 

@@ -40,7 +40,7 @@
         <%= link_to image_tag("edit.jpg", height: 25), edit_registration_path(usuario), class: "nav-link"%>
 	    </div>
 	    <div class="col col-sm-1 col p-2 bg-light border">
-	    	<%= link_to image_tag("delete.png", height: 25), destroy_registration_path(usuario), class: "nav-link" %>
+	    	<%= link_to image_tag("delete.png", height: 25), destroy_registration_path(usuario), :confirm => 'Are you sure?', :method => :delete %>
 	    </div>
 	    <div class="col col-sm-1 col p-2 bg-light border">
 	    	<%= link_to image_tag("view.png", height: 25), show_registration_path(usuario), class: "nav-link" %>

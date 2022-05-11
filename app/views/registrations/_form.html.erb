@@ -17,9 +17,7 @@
 </div>
 <div class="mb-3">
 	<%= form.label "Tipo de usuário" %>
-</div>
-<div>
-	<%= form.select :tipoUsuario, ["","Administrador", "Aluno", "Professor"], class: "form-control" %>
+	<%= form.select :tipoUsuario, (["Administrador", "Aluno", "Professor"]), {include_blank: true}, class: "form-select" %>
 </div>	
 <div class="mb-3">
 	<%= form.label "Telefone" %>
