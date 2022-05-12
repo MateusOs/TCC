@@ -1,0 +1,20 @@
+<%= form_for :session, url: sign_in_path do |f| %>
+  <div class="row-sm">
+	  <div class="col-sm-3">
+	    <%= f.label "login" %><br />
+	    <%= f.text_field :login, class: "form-control" %>
+	  </div>
+  </div>
+  <div class="row-sm">
+	<div class="col-sm-3">
+    	<%= f.label "Senha" %><br />
+    	<%= f.password_field :password, class: "form-control" %>
+  	</div>
+  </div>
+  <div class="mb-3">
+  </div>
+  <div class="actions">
+    <%= f.submit "Log in", class:"btn btn-primary" %>
+  </div>
+<p>Novo usuário? <%= link_to " Cadastre-se!", registrations_new_path %></p>
+<% end %>

@@ -4,6 +4,45 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <% if logged_in? %>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <%= link_to "Início", root_path, class: "nav-link active" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sobre", about_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Projetos
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+              <li>
+                <%= link_to "Novo projeto", registrations_new_path, class: "nav-link" %>
+              </li>
+              <li>
+                <%= link_to "Projetos", registrations_path, class: "nav-link" %>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Usuários
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+              <li>
+                <%= link_to "Novo usuário", registrations_new_path, class: "nav-link" %>
+              </li>
+              <li>
+                <%= link_to "Usuários", registrations_path, class: "nav-link" %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+        <%= link_to "Logout", sign_out_path, class:"btn btn-primary" %>
+        </form>
+      <% else %>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link active" %>
@@ -11,20 +50,11 @@
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Usuários
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-            <li>
-              <%= link_to "Novo usuário", registrations_new_path, class: "nav-link" %>
-            </li>
-            <li>
-              <%= link_to "Usuários", registrations_path, class: "nav-link" %>
-            </li>
-          </ul>
-        </li>
       </ul>
+      <form class="d-flex">
+        <%= link_to "Login", sign_in_path, class:"btn btn-primary" %>
+      </form>
+      <% end %>
     </div>
   </div>
 </nav>

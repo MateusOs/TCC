@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -15,4 +16,9 @@ Rails.application.routes.draw do
   put 'registrations/:id', to: 'registrations#update'
   delete 'registrations/:id/delete', to: 'registrations#destroy', as: 'destroy_registration'
   get 'registrations/:id/delete', to: 'registrations#destroy'
+
+  get    'sign_in'   => 'sessions#new'
+  post   'sign_in'   => 'sessions#create'
+  get 'sign_out' => 'sessions#destroy'
+  delete 'sign_out'  => 'sessions#destroy'
 end

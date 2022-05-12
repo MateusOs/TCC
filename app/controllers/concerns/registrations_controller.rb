@@ -1,5 +1,5 @@
 class RegistrationsController < ApplicationController
-	#before_filter :find_user, only: [:show, :edit, :update, :destroy]
+	before_action :authorize, except: [:new, :create, :edit]
 
 	def index
 		@usuario = Usuario.all
@@ -17,7 +17,7 @@ class RegistrationsController < ApplicationController
 		@usuario = Usuario.new(usuario_params)
 		if @usuario.save
 			redirect_to registrations_path
-			flash[:notice] = "Usuario adicionado"
+			flash[:notice] = "Usuario foi criado com sucesso"
 		else
 			render :new
 		end
@@ -42,7 +42,7 @@ class RegistrationsController < ApplicationController
 
 	def destroy
 		@usuario = Usuario.find(params[:id])
-		@usuario.destroy		
+		@usuario.destroy
 		flash[:notice] = "Usuario deletado"
 		redirect_to registrations_path
 	end
@@ -51,7 +51,7 @@ class RegistrationsController < ApplicationController
 	private
 	
 	def usuario_params
-		params.require(:usuario).permit(:nome, :login, :senha, :email, :tipoUsuario, :fone)
+		params.require(:usuario).permit(:nome, :login, :password, :password_confirmation, :email, :tipoUsuario, :fone)
 	end	
 
 	def find_user
