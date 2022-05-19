@@ -9,6 +9,12 @@
 	<%= form.label "Número" %>
 	<%= form.text_field :numero, :required => true, class: "form-control", placeholder:"Digite o número do projeto" %>
 </div>
+<form method="post">
+	<div class="form-group"> <!-- Date input -->
+		<label class="control-label" for="date">Date</label>
+		<input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+	</div>
+</form>
 <div class="mb-3">
 	<%= form.label "Data" %>
 	<%= form.text_field :data, :required => true, class: "form-control" , placeholder:"Digite a data do projeto" %>

@@ -1,45 +1,65 @@
-<h1>Criação de Usuários</h1>
 
-<%= form_for @usuario, url: registrations_new_path do |form| %>
-<% if @usuario.errors.any? %>
+<h1>Criação de projeto</h1>
+
+<%= form_for @projeto, url: projetos_new_path do |form| %>
+<% if @projeto.errors.any? %>
 <div id="error_explanation">
 	<div class="alert-error">
-		O formulário contém <%= pluralize(@usuario.errors.count, "erro") %>.
+		O formulário contém <%= pluralize(@projeto.errors.count, "erro") %>.
 	</div>
 	<ul>
-		<% @usuario.errors.full_messages.each do |msg| %>
+		<% @projeto.errors.full_messages.each do |msg| %>
 		<li><%= msg %></li>
 		<% end %>
 	</ul>
 </div>
 <% end %>
+
 <div class="mb-3">
 	<%= form.label "Nome" %>
-	<%= form.text_field :nome, :required => true, class: "form-control", placeholder:"Digite seu nome" %>
+	<%= form.text_field :nome, :required => true, class: "form-control", placeholder:"Digite o nome do projeto" %>
 </div>
 <div class="mb-3">
-	<%= form.label "Login" %>
-	<%= form.text_field :login, :required => true, class: "form-control", placeholder:"Digite seu login" %>
+	<%= form.label "Número" %>
+	<%= form.text_field :numero, :required => true, class: "form-control", placeholder:"Digite o número do projeto" %>
+</div>
+<form method="post">
+	<div class="form-group"> <!-- Date input -->
+		<label class="control-label" for="date">Date</label>
+		<input class="form-control" id="date" name="date" placeholder="DD/MM/YYYY" type="text"/>
+	</div>
+</form>
+<div class="mb-3">
+	<%= form.label "Data" %>
+	<%= form.text_field :data, :required => true, class: "form-control" , placeholder:"Digite a data do projeto" %>
 </div>
 <div class="mb-3">
-	<%= form.label "Senha" %>
-	<%= form.password_field :password, :required => true, class: "form-control" , placeholder:"Digite sua senha"%>
+	<%= form.label "Data início" %>
+	<%= form.text_field :dataInicio, :required => true, class: "form-control" , placeholder:"Digite a data de início do projeto" %>
 </div>	
 <div class="mb-3">
-	<%= form.label "Confirme a senha" %>
-	<%= form.password_field :password_confirmation, :required => true, class: "form-control" , placeholder:"Confirme sua senha"%>
-</div>	
-<div class="mb-3">
-	<%= form.label "E-mail" %>
-	<%= form.text_field :email, :required => true, class: "form-control" , placeholder:"Digite seu e-mail" %>
+	<%= form.label "Data fim" %>
+	<%= form.text_field :dataFim, class: "form-control" , placeholder:"Digite a data de finalização do projeto" %>
 </div>
 <div class="mb-3">
-	<%= form.label "Tipo de usuário" %>
-	<%= form.select :tipoUsuario, (["Administrador", "Aluno", "Professor"]), {include_blank: true}, class: "form-select" %>
-</div>	
+	<%= form.label "Status" %>
+	<%= form.select :status, (["Concluído", "Em desenvolvimento", "Cancelado"]), {include_blank: true}, class: "form-select" %>
+</div>
 <div class="mb-3">
-	<%= form.label "Telefone" %>
-	<%= form.telephone_field :fone, class: "form-control" , placeholder:"Digite seu telefone" %>
+	<%= form.label "Área" %>
+	<%= form.text_field :area, class: "form-control" , placeholder:"Digite a área relacionada ao projeto" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Departamento" %>
+	<%= form.text_field :departamento, class: "form-control" , placeholder:"Digite o departamento relacionado ao projeto" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Avaliação comitê" %>
+	<%= form.text_field :avaliacaComite, class: "form-control" , placeholder:"Digite a avaliação do comitê" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Avaliação depex" %>
+	<%= form.text_field :avaliacaoDexep, class: "form-control" , placeholder:"Digite a avaliação do depex" %>
 </div>
 <div class="mb-3">
 	<%= form.submit "Salvar", class:"btn btn-primary" %>

@@ -1,4 +1,4 @@
-class ProjetossController < ApplicationController
+class ProjetosController < ApplicationController
 	before_action :authorize, except: [:new, :create, :edit]
 
 	def index
