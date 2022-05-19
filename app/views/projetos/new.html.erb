@@ -1,0 +1,47 @@
+<h1>Criação de Usuários</h1>
+
+<%= form_for @usuario, url: registrations_new_path do |form| %>
+<% if @usuario.errors.any? %>
+<div id="error_explanation">
+	<div class="alert-error">
+		O formulário contém <%= pluralize(@usuario.errors.count, "erro") %>.
+	</div>
+	<ul>
+		<% @usuario.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<div class="mb-3">
+	<%= form.label "Nome" %>
+	<%= form.text_field :nome, :required => true, class: "form-control", placeholder:"Digite seu nome" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Login" %>
+	<%= form.text_field :login, :required => true, class: "form-control", placeholder:"Digite seu login" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Senha" %>
+	<%= form.password_field :password, :required => true, class: "form-control" , placeholder:"Digite sua senha"%>
+</div>	
+<div class="mb-3">
+	<%= form.label "Confirme a senha" %>
+	<%= form.password_field :password_confirmation, :required => true, class: "form-control" , placeholder:"Confirme sua senha"%>
+</div>	
+<div class="mb-3">
+	<%= form.label "E-mail" %>
+	<%= form.text_field :email, :required => true, class: "form-control" , placeholder:"Digite seu e-mail" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Tipo de usuário" %>
+	<%= form.select :tipoUsuario, (["Administrador", "Aluno", "Professor"]), {include_blank: true}, class: "form-select" %>
+</div>	
+<div class="mb-3">
+	<%= form.label "Telefone" %>
+	<%= form.telephone_field :fone, class: "form-control" , placeholder:"Digite seu telefone" %>
+</div>
+<div class="mb-3">
+	<%= form.submit "Salvar", class:"btn btn-primary" %>
+</div>
+<% end %>

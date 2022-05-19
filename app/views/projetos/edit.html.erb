@@ -1,0 +1,47 @@
+<h1>Editar projeto</h1>
+
+<%= form_for @projeto, url: update_projeto_path do |form| %>
+<div class="mb-3">
+	<%= form.label "Nome" %>
+	<%= form.text_field :nome, :required => true, class: "form-control", placeholder:"Digite o nome do projeto" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Número" %>
+	<%= form.text_field :numero, :required => true, class: "form-control", placeholder:"Digite o número do projeto" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Data" %>
+	<%= form.text_field :data, :required => true, class: "form-control" , placeholder:"Digite a data do projeto" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Data início" %>
+	<%= form.text_field :dataInicio, :required => true, class: "form-control" , placeholder:"Digite a data de início do projeto" %>
+</div>	
+<div class="mb-3">
+	<%= form.label "Data fim" %>
+	<%= form.text_field :dataFim, class: "form-control" , placeholder:"Digite a data de finalização do projeto" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Status" %>
+	<%= form.select :status, (["Concluído", "Em desenvolvimento", "Cancelado"]), {include_blank: true}, class: "form-select" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Área" %>
+	<%= form.text_field :area, class: "form-control" , placeholder:"Digite a área relacionada ao projeto" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Departamento" %>
+	<%= form.text_field :departamento, class: "form-control" , placeholder:"Digite o departamento relacionado ao projeto" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Avaliação comitê" %>
+	<%= form.text_field :avaliacaoComite, class: "form-control" , placeholder:"Digite a avaliação do comitê" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Avaliação depex" %>
+	<%= form.text_field :avaliacaoDepex, class: "form-control" , placeholder:"Digite a avaliação do depex" %>
+</div>
+<div class="mb-3">
+	<%= form.submit "Salvar", class:"btn btn-primary" %>
+</div>
+<% end %>

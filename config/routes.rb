@@ -21,4 +21,15 @@ Rails.application.routes.draw do
   post   'sign_in'   => 'sessions#create'
   get 'sign_out' => 'sessions#destroy'
   delete 'sign_out'  => 'sessions#destroy'
+
+  get 'projetos', to: 'projetos#index'
+  post 'projetos/new', to: 'projetos#create'
+  get 'projetos/new', to: 'projetos#new'
+  get 'projetos/:id/edit', to: 'projetos#edit', as: 'edit_projeto'
+  get 'projetos/:id', to: 'projetos#show', as: 'show_projeto'
+  patch 'projetos/:id', to: 'projetos#update', as: 'update_projeto'
+  put 'projetos/:id', to: 'projetos#update'
+  delete 'projetos/:id/delete', to: 'projetos#destroy', as: 'destroy_projeto'
+  get 'projetos/:id/delete', to: 'projetos#destroy'
+
 end
