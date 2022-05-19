@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
 			redirect_to root_path
 		end
 	end
+
+	def correct_usuario?
+		@usuario = Usuario.find(params[:id])
+		unless current_usuario == @usuario
+			redirect_to registration_path
+		end
+	end
 end

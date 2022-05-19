@@ -9,23 +9,17 @@
 	<%= form.label "Número" %>
 	<%= form.text_field :numero, :required => true, class: "form-control", placeholder:"Digite o número do projeto" %>
 </div>
-<form method="post">
-	<div class="form-group"> <!-- Date input -->
-		<label class="control-label" for="date">Date</label>
-		<input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-	</div>
-</form>
 <div class="mb-3">
-	<%= form.label "Data" %>
-	<%= form.text_field :data, :required => true, class: "form-control" , placeholder:"Digite a data do projeto" %>
+	<%= form.label "Data projeto" %>
+	<%= form.text_field :data, ({"data-provide" => 'datepicker', "data-date-format" => "dd/mm/yyyy", class: "form-control",placeholder: "DD/MM/YYYY"}) %>
 </div>
 <div class="mb-3">
 	<%= form.label "Data início" %>
-	<%= form.text_field :dataInicio, :required => true, class: "form-control" , placeholder:"Digite a data de início do projeto" %>
-</div>	
+	<%= form.text_field :dataInicio, ({"data-provide" => 'datepicker', "data-date-format" => "dd/mm/yyyy", class: "form-control",placeholder: "DD/MM/YYYY"}) %>
+</div>
 <div class="mb-3">
 	<%= form.label "Data fim" %>
-	<%= form.text_field :dataFim, class: "form-control" , placeholder:"Digite a data de finalização do projeto" %>
+	<%= form.text_field :dataFim, ({"data-provide" => 'datepicker', "data-date-format" => "dd/mm/yyyy", class: "form-control",placeholder: "DD/MM/YYYY"}) %>
 </div>
 <div class="mb-3">
 	<%= form.label "Status" %>

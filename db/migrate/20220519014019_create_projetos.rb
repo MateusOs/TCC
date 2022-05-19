@@ -9,8 +9,8 @@ class CreateProjetos < ActiveRecord::Migration[7.0]
       t.string :status
       t.string :area
       t.string :departamento
-      t.integer :avaliacaComite
-      t.integer :avaliacaoDexep
+      t.integer :avaliacaoComite
+      t.integer :avaliacaoDepex
       t.integer :avaliacaoGeral
 
       t.timestamps

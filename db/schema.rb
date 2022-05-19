@@ -20,8 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_19_014019) do
     t.string "status"
     t.string "area"
     t.string "departamento"
-    t.integer "avaliacaComite"
-    t.integer "avaliacaoDexep"
+    t.integer "avaliacaoComite"
+    t.integer "avaliacaoDepex"
     t.integer "avaliacaoGeral"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
