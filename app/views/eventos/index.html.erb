@@ -1,0 +1,49 @@
+<h1>Eventos</h1>
+
+<div>
+  <div class="row">
+    <div class="col col-sm-5 p-2 bg-light border">
+      <strong>Descrição</strong>
+    </div>
+    <div class="col col-sm-1 col p-2 bg-light border">
+      <strong>Data</strong>
+    </div>
+    <div class="col col-sm-3 col p-2 bg-light border">
+      <strong>Projeto</strong>
+    </div>
+    <div class="col col-sm-1 col p-2 bg-light border">
+      <strong>Editar</strong>
+    </div>
+    <div class="col col-sm-1 col p-2 bg-light border">
+      <strong>Deletar</strong>
+    </div>
+    <div class="col col-sm-1 col p-2 bg-light border">
+      <strong>Visualizar</strong>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="row">
+  	<% @evento.each do |evento| %>
+	    <div class="col col-sm-5 p-2 bg-light border">
+	      <%= evento.descricao %>
+	    </div>
+	    <div class="col col-sm-1 col p-2 bg-light border">
+	      <td><%= evento.data %></td>
+	    </div>
+	    <div class="col col-sm-3 col p-2 bg-light border">
+	      <td><%= evento.projeto.nome %></td>
+	    </div>
+	    <div class="col col-sm-1 col p-2 bg-light border">
+        <%= link_to image_tag("edit.jpg", height: 25), edit_evento_path(evento), class: "nav-link" %>
+	    </div>
+	    <div class="col col-sm-1 col p-2 bg-light border">
+        <%= link_to image_tag("delete.png", height: 25), destroy_evento_path(evento), :method => :delete %>
+	    </div>
+	    <div class="col col-sm-1 col p-2 bg-light border">
+	    	<%= link_to image_tag("view.png", height: 25), show_evento_path(evento), class: "nav-link" %>
+	    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+
+<h1>Criação de eventos</h1>
+
+<%= form_for @evento, url: eventos_new_path do |form| %>
+<% if @evento.errors.any? %>
+<div id="error_explanation">
+	<div class="alert-error">
+		O formulário contém <%= pluralize(@evento.errors.count, "erro") %>.
+	</div>
+	<ul>
+		<% @evento.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="mb-3">
+	<%= form.label "Descrição" %>
+	<%= form.text_field :descricao, :required => true, class: "form-text", placeholder:"Descrição do evento" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Data do evento" %>
+	<%= form.text_field :data, ({"data-provide" => 'datepicker', "data-date-format" => "dd/mm/yyyy", class: "form-date",placeholder: "DD/MM/YYYY"}) %>
+</div>
+<div class="mb-3">
+	<%= form.label "Projeto"%>
+	<%= form.collection_select(:projeto_id, @projetos, :id, :nome, {include_blank: true}, class: "form-select") %>
+</div>
+<div class="mb-3">
+	<%= form.submit "Salvar", class:"btn btn-primary" %>
+</div>
+<% end %>

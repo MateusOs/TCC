@@ -22,8 +22,4 @@ production:
   host: localhost
   username: postgres
   password: 1234abc
-<<<<<<< HEAD
   database: ExteUTF_production
-=======
-  database: ExteUTF_production
->>>>>>> fd34bdd70f3a42594ca2d9af0f3faa777827e900

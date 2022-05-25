@@ -10,13 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2022_05_25_123326) do
-=======
-ActiveRecord::Schema[7.0].define(version: 2022_05_19_014019) do
->>>>>>> fd34bdd70f3a42594ca2d9af0f3faa777827e900
+ActiveRecord::Schema[7.0].define(version: 2022_05_25_174411) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "eventos", force: :cascade do |t|
+    t.string "descricao"
+    t.date "data"
+    t.bigint "projeto_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["projeto_id"], name: "index_eventos_on_projeto_id"
+  end
 
   create_table "projetos", force: :cascade do |t|
     t.string "nome"
@@ -49,5 +54,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_19_014019) do
     t.index ["login"], name: "index_usuarios_on_login", unique: true
   end
 
+  add_foreign_key "eventos", "projetos"
   add_foreign_key "projetos", "usuarios"
 end

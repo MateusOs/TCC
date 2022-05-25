@@ -11,6 +11,8 @@ gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
 #gem "sqlite3", "~> 1.4"
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '3543363026121ee28d98dfce4cb6366980c055ee'
+gem "paperclip", "~> 6.0.0"
 
 gem 'pg'
 
@@ -42,7 +44,7 @@ gem "jbuilder"
 gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+#gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
