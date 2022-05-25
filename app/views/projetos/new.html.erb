@@ -24,6 +24,10 @@
 	<%= form.text_field :numero, :required => true, class: "form-control", placeholder:"Digite o número do projeto" %>
 </div>
 <div class="mb-3">
+	<%= form.label "Responsável pelo projeto"%>
+	<%= form.collection_select(:usuario_id, @usuarios, :id, :nome, {include_blank: true}, class: "form-select") %>
+</div>
+<div class="mb-3">
 	<%= form.label "Data projeto" %>
 	<%= form.text_field :data, ({"data-provide" => 'datepicker', "data-date-format" => "dd/mm/yyyy", class: "form-control",placeholder: "DD/MM/YYYY"}) %>
 </div>

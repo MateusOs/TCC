@@ -1,5 +1,6 @@
 class ProjetosController < ApplicationController
 	before_action :authorize, except: [:new, :create, :edit]
+	before_action :set_usuarios, only: [:edit, :update, :new, :create]
 
 	def index
 		@projeto = Projeto.all
@@ -51,10 +52,14 @@ class ProjetosController < ApplicationController
 	private
 	
 	def projeto_params
-		params.require(:projeto).permit(:nome, :numero, :data, :dataInicio, :dataFim, :status, :area, :departamento, :avaliacaComite, :avaliacaoDexep, :avaliacaoGeral)
+		params.require(:projeto).permit(:nome, :numero, :data, :dataInicio, :dataFim, :status, :area, :departamento, :avaliacaComite, :avaliacaoDexep, :avaliacaoGeral, :usuario_id)
 	end	
 
 	def find_user
     	@user = Projeto.find(params[:id])
+  	end
+
+  	def set_usuarios
+  		@usuarios = Usuario.all
   	end
 end
