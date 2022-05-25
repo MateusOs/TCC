@@ -60,6 +60,6 @@ class ProjetosController < ApplicationController
   	end
 
   	def set_usuarios
-  		@usuarios = Usuario.all
+  		@usuarios = Usuario.where(tipoUsuario: "Professor")
   	end
 end

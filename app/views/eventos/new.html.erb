@@ -28,6 +28,10 @@
 	<%= form.collection_select(:projeto_id, @projetos, :id, :nome, {include_blank: true}, class: "form-select") %>
 </div>
 <div class="mb-3">
+	<%= form.label "Arquivo"%>
+	<%= form.text_field :arquivo, :required => false, class: "form-control-file", placeholder:"Descrição do evento" %>
+</div>
+<div class="mb-3">
 	<%= form.submit "Salvar", class:"btn btn-primary" %>
 </div>
 <% end %>
