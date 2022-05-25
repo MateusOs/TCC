@@ -2,7 +2,7 @@
 
 <div>
   <div class="row">
-    <div class="col col-sm-3 p-2 bg-light border">
+    <div class="col col-sm-2 p-2 bg-light border">
       <strong>Nome</strong>
     </div>
     <div class="col col-sm-1 col p-2 bg-light border">
@@ -14,7 +14,7 @@
     <div class="col col-sm-2 col p-2 bg-light border">
       <strong>Status</strong>
     </div>
-    <div class="col col-sm-2 col p-2 bg-light border">
+    <div class="col col-sm-1 col p-2 bg-light border">
       <strong>Área</strong>
     </div>
     <div class="col col-sm-2 col p-2 bg-light border">
@@ -35,7 +35,7 @@
 <div>
   <div class="row">
   	<% @projeto.each do |projeto| %>
-	    <div class="col col-sm-3 p-2 bg-light border">
+	    <div class="col col-sm-2 p-2 bg-light border">
 	      <%= projeto.nome %>
 	    </div>
 	    <div class="col col-sm-1 col p-2 bg-light border">
@@ -47,7 +47,7 @@
       <div class="col col-sm-2 col p-2 bg-light border">
         <td><%= projeto.status %></td>
       </div>
-      <div class="col col-sm-2 col p-2 bg-light border">
+      <div class="col col-sm-1 col p-2 bg-light border">
         <td><%= projeto.area %></td>
       </div>
       <div class="col col-sm-2 col p-2 bg-light border">
