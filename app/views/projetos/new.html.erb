@@ -52,6 +52,14 @@
 	<%= form.text_field :departamento, class: "form-control" , placeholder:"Digite o departamento relacionado ao projeto" %>
 </div>
 <div class="mb-3">
+	<%= form.label "Área temática" %>
+	<%= form.text_field :areaTematica, class: "form-control" , placeholder:"Digite a área temática do projeto" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Objetivo" %>
+	<%= form.text_area :objetivo, class: "form-text" , placeholder:"Digite o objetivo do projeto" %>
+</div>
+<div class="mb-3">
 	<%= form.label "Avaliação comitê" %>
 	<%= form.text_field :avaliacaoComite, class: "form-control" , placeholder:"Digite a avaliação do comitê" %>
 </div>

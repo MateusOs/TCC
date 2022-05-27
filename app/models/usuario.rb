@@ -9,4 +9,6 @@ class Usuario < ActiveRecord::Base
 	validates :email, presence: true
 	validates :tipoUsuario, presence: true
 	validates :fone, presence: false
+	validates :departamento, presence: false
+	validates :chefeDepartamento, presence: false
 end

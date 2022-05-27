@@ -52,7 +52,7 @@ class ProjetosController < ApplicationController
 	private
 	
 	def projeto_params
-		params.require(:projeto).permit(:nome, :numero, :data, :dataInicio, :dataFim, :status, :area, :departamento, :avaliacaComite, :avaliacaoDexep, :avaliacaoGeral, :usuario_id)
+		params.require(:projeto).permit(:nome, :numero, :data, :dataInicio, :dataFim, :status, :area, :departamento, :avaliacaComite, :avaliacaoDexep, :avaliacaoGeral, :usuario_id, :objetivo, :areaTematica)
 	end	
 
 	def find_user

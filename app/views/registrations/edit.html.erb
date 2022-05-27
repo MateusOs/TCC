@@ -30,6 +30,14 @@
 	<%= form.telephone_field :fone, class: "form-control" , placeholder:"Digite seu telefone" %>
 </div>
 <div class="mb-3">
+	<%= form.label "Departamento" %>
+	<%= form.telephone_field :departamento, class: "form-control" , placeholder:"Digite seu departamento" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Chefe departamento" %>
+	<%= form.telephone_field :chefeDepartamento, class: "form-control" , placeholder:"Digite seu chefe de departamento" %>
+</div>
+<div class="mb-3">
 	<%= form.submit "Salvar", class:"btn btn-primary" %>
 </div>
 <% end %>

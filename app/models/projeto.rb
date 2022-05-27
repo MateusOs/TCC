@@ -15,4 +15,6 @@ class Projeto < ActiveRecord::Base
 	validates :avaliacaoComite, presence: false
 	validates :avaliacaoDepex, presence: false
 	validates :avaliacaoGeral, presence: false
+	validates :areaTematica, presence: false
+	validates :objetivo, presence: false
 end

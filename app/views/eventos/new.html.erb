@@ -17,7 +17,7 @@
 
 <div class="mb-3">
 	<%= form.label "Descrição" %>
-	<%= form.text_field :descricao, :required => true, class: "form-text", placeholder:"Descrição do evento" %>
+	<%= form.text_area :descricao, :required => true, class: "form-text", placeholder:"Descrição do evento" %>
 </div>
 <div class="mb-3">
 	<%= form.label "Data do evento" %>
@@ -28,8 +28,8 @@
 	<%= form.collection_select(:projeto_id, @projetos, :id, :nome, {include_blank: true}, class: "form-select") %>
 </div>
 <div class="mb-3">
-	<%= form.label "Arquivo"%>
-	<%= form.text_field :arquivo, :required => false, class: "form-control-file", placeholder:"Descrição do evento" %>
+	<%= form.label "Link" %>
+	<%= form.text_field :link, class: "form-control", placeholder:"Link" %>
 </div>
 <div class="mb-3">
 	<%= form.submit "Salvar", class:"btn btn-primary" %>

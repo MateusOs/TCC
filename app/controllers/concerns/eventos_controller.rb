@@ -52,7 +52,7 @@ class EventosController < ApplicationController
 	private
 	
 	def evento_params
-		params.require(:evento).permit(:descricao, :data, :projeto_id)
+		params.require(:evento).permit(:descricao, :data, :projeto_id, :link)
 	end	
 
 	def find_user

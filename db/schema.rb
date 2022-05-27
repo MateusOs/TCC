@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_25_174411) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_26_234322) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_174411) do
     t.bigint "projeto_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "link"
     t.index ["projeto_id"], name: "index_eventos_on_projeto_id"
   end
 
@@ -38,6 +39,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_174411) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "usuario_id", null: false
+    t.string "objetivo"
+    t.string "areaTematica"
     t.index ["usuario_id"], name: "index_projetos_on_usuario_id"
   end
 
@@ -50,6 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_174411) do
     t.string "fone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "departamento"
+    t.string "chefeDepartamento"
     t.index ["email"], name: "index_usuarios_on_email", unique: true
     t.index ["login"], name: "index_usuarios_on_login", unique: true
   end

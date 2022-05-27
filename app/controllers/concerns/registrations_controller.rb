@@ -51,7 +51,7 @@ class RegistrationsController < ApplicationController
 	private
 	
 	def usuario_params
-		params.require(:usuario).permit(:nome, :login, :password, :password_confirmation, :email, :tipoUsuario, :fone)
+		params.require(:usuario).permit(:nome, :login, :password, :password_confirmation, :email, :tipoUsuario, :fone, :departamento, :chefeDepartamento)
 	end	
 
 	def find_user
