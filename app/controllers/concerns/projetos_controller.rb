@@ -1,7 +1,7 @@
 class ProjetosController < ApplicationController
 	before_action :authorize, except: [:new, :create, :edit]
 	before_action :set_usuarios, only: [:edit, :update, :new, :create]
-
+	
 	def index
 		@projeto = Projeto.all
 	end

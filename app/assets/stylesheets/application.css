@@ -44,3 +44,36 @@
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+@media screen and (min-width: 992px){
+    .container-fluid, .navbar-expand-lg .navbar-collapse, .navbar-expand-lg .navbar-nav{
+        flex-direction: column;
+        align-itens: flex-start;
+    }
+    .navbar{
+        width: 230px;
+        height: 100vh;
+        align-itens: flex-start;
+    }
+    .navbar-brand{
+        margin-left: .5rem;
+    }
+}
+.navbar .navbar-nav .nav-link{
+        color: #fff;
+        font-size: 1.1em;
+}
+.navbar-brand{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.navbar>.container-fluid{
+    align-items: flex-start;
+}
+.navbar{
+    display: block;
+}
+.container-fluid{
+  margin: 0;
+  padding: 0;   
+}

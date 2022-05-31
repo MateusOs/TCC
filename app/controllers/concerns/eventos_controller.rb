@@ -1,7 +1,7 @@
 class EventosController < ApplicationController
 	before_action :authorize, except: [:new, :create, :edit]
 	before_action :set_projetos, only: [:edit, :update, :new, :create]
-
+	
 	def index
 		@evento = Evento.all
 	end
