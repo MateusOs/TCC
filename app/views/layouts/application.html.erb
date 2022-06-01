@@ -32,10 +32,12 @@
   </head>
 
   <body>
-    <%= render partial: "shared/navbar"%>
-    <div class="container">
-      <%= render partial: "shared/flash" %>
-      <%= yield %>
+    <div class="wrapper">
+      <%= render partial: "shared/navbar"%>
+      <div id="content" class="container">
+        <%= render partial: "shared/flash" %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

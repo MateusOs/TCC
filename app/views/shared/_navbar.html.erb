@@ -45,6 +45,10 @@
             </ul>
           </li>
         </ul>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar projetos" aria-label="Search">
+          <button class="btn btn-sm btn-outline-secondary" type="submit">Pesquisar</button>
+        </form>
         <form class="d-flex">
         <%= link_to "Logout", sign_out_path, class:"btn btn-primary" %>
         </form>
@@ -56,6 +60,10 @@
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar projetos" aria-label="Search">
+          <button class="btn btn-sm btn-outline-secondary" type="submit">Pesquisar</button>
+        </form>
       </ul>
       <form class="d-flex">
         <%= link_to "Login", sign_in_path, class:"btn btn-primary" %>
