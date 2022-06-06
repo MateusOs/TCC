@@ -1,9 +1,13 @@
 class ProjetosController < ApplicationController
-	before_action :authorize, except: [:new, :create, :edit]
+	before_action :authorize, except: [:index, :show]
 	before_action :set_usuarios, only: [:edit, :update, :new, :create]
 	
 	def index
-		@projeto = Projeto.all
+		if params[:nomeProjeto]
+			@projeto = Projeto.where("nome like ?", "%#{params[:nomeProjeto]}%")
+		else
+			@projeto = Projeto.all
+		end
 	end
 
 	def show
