@@ -42,7 +42,7 @@
 	      <td><%= projeto.numero %></td>
 	    </div>
 	    <div class="col col-sm-1 col p-2 bg-light border">
-	      <td><%= projeto.data %></td>
+	      <td><%= projeto.data.strftime("%d/%m/%Y") %></td>
 	    </div>
       <div class="col col-sm-2 col p-2 bg-light border">
         <td><%= projeto.status %></td>

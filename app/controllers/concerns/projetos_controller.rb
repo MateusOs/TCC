@@ -4,7 +4,7 @@ class ProjetosController < ApplicationController
 	
 	def index
 		if params[:nomeProjeto]
-			@projeto = Projeto.where("nome like ?", "%#{params[:nomeProjeto]}%")
+			@projeto = Projeto.where("lower(nome) like lower(?)", "%#{params[:nomeProjeto]}%")
 		else
 			@projeto = Projeto.all
 		end

@@ -30,7 +30,7 @@
 	      <%= evento.descricao %>
 	    </div>
 	    <div class="col col-sm-1 col p-2 bg-light border">
-	      <td><%= evento.data %></td>
+	      <td><%= evento.data.strftime("%d/%m/%Y") %></td>
 	    </div>
 	    <div class="col col-sm-3 col p-2 bg-light border">
 	      <td><%= evento.projeto.nome %></td>

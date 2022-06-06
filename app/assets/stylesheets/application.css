@@ -60,7 +60,7 @@
     }
 }
 .navbar .navbar-nav .nav-link{
-        color: #fff;
+        color: #999;
         font-size: 1.1em;
 }
 .navbar-brand{
@@ -132,5 +132,7 @@ a, a:hover, a:focus {
     font-size: .875rem;
     border-radius: 0.2rem;
     width: 100%;
-    
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    width: 100%;
 }

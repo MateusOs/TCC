@@ -1,5 +1,5 @@
 class RegistrationsController < ApplicationController
-	before_action :authorize, except: [:new, :create, :edit]
+	#before_action :authorize, except: [:new, :create, :edit]
 
 	def index
 		@usuario = Usuario.all
@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
 	def show
 		@usuario = Usuario.find(params[:id])
 	end
-	
+
 	def new
 		@usuario = Usuario.new
 	end

@@ -61,19 +61,19 @@
         <li class="nav-item">
           <%= link_to image_tag("logo.png", height: 25), root_path, class: "nav-link active" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "About", about_path, class: "nav-link" %>
+        <li>
+          <%= link_to "Visualizar projetos", projetos_path, class: "nav-link" %>
         </li>
         <li>
           <%= form_tag(projetos_path, method: :get) do %>
             <%= text_field_tag 'nomeProjeto', nil, placeholder: 'Pesquisar o projeto' %>
-            <%= submit_tag "Pesquisar", class: "btn btn-primary" %>
+            <%= submit_tag "Pesquisar", class: "btn btn-primary btn-full" %>
           <% end %>
         </li>
       </ul>
       <ul>
       </ul>
-      <form class="d-flex">
+      <form class="d-flex align-items-end">
         <%= link_to "Login", sign_in_path, class:"btn btn-primary" %>
       </form>
       <% end %>
