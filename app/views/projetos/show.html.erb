@@ -13,15 +13,15 @@
   </p>
   <p>
     <strong>Data projeto:</strong>
-    <%= @projeto.data %>
+    <%= @projeto.data.strftime("%d/%m/%Y") %>
   </p>
   <p>
     <strong>Data início:</strong>
-    <%= @projeto.dataInicio %>
+    <%= @projeto.dataInicio == nil ? '' : @projeto.dataInicio.strftime("%d/%m/%Y") %>
   </p>
   <p>
     <strong>Data fim:</strong>
-    <%= @projeto.dataFim %>
+    <%= @projeto.dataFim == nil ? '' : @projeto.dataFim.strftime("%d/%m/%Y") %>
   </p>
   <p>
     <strong>Status:</strong>
@@ -53,6 +53,20 @@
   </p>
   <p>
     <strong>Avaliação geral:</strong>
-    <%= @projeto.avaliacaoGeral %>
+    <%= (@projeto.avaliacaoComite + @projeto.avaliacaoDepex)/2 %>
   </p>
+  <div>
+    <% @usuarioprojeto.each do |usuarioprojeto| %>
+      <% if usuarioprojeto.projeto.id = @projeto.id %>
+        <p>
+          <strong>Tipo usuario:</strong>
+          <%= usuarioprojeto.tipoUsuario %>
+        </p>
+        <p>
+          <strong>Usuario:</strong>
+          <%= usuarioprojeto.usuario.nome %>
+        </p>
+      <% end %>    
+    <% end %>
+  </div>
 </div>

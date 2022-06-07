@@ -1,0 +1,60 @@
+<div>
+  <div class="row">
+    <div class="col col-sm-6 p-2">
+      <h1>Projeto-Usuário</h1>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="row">
+    <div class="col col-sm-2 p-2 bg-light border">
+      <strong>Usuário</strong>
+    </div>
+    <div class="col col-sm-2 col p-2 bg-light border">
+      <strong>Tipo de usuário</strong>
+    </div>
+    <div class="col col-sm-3 col p-2 bg-light border">
+      <strong>Projeto</strong>
+    </div>
+    <div class="col col-sm-2 col p-2 bg-light border">
+      <strong>Carga horária</strong>
+    </div>
+    <div class="col col-sm-1 col p-2 bg-light border">
+      <strong>Editar</strong>
+    </div>
+    <div class="col col-sm-1 col p-2 bg-light border">
+      <strong>Deletar</strong>
+    </div>
+    <div class="col col-sm-1 col p-2 bg-light border">
+      <strong>Visualizar</strong>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="row">
+  	<% @usuarioprojeto.each do |usuarioprojeto| %>
+	    <div class="col col-sm-2 p-2 bg-light border">
+	      <%= usuarioprojeto.usuario.nome %>
+	    </div>
+	    <div class="col col-sm-2 col p-2 bg-light border">
+	      <td><%= usuarioprojeto.tipoUsuario %></td>
+	    </div>
+	    <div class="col col-sm-3 col p-2 bg-light border">
+	      <td><%= usuarioprojeto.projeto.nome %></td>
+	    </div>
+      <div class="col col-sm-2 col p-2 bg-light border">
+        <td><%= usuarioprojeto.cargaHoraria %></td>
+      </div>
+	    <div class="col col-sm-1 col p-2 bg-light border">
+        <%= link_to image_tag("edit.jpg", height: 25), edit_usuarioprojeto_path(usuarioprojeto), class: "nav-link" %>
+	    </div>
+	    <div class="col col-sm-1 col p-2 bg-light border">
+        <%= link_to image_tag("delete.png", height: 25), destroy_usuarioprojeto_path(usuarioprojeto), :method => :delete %>
+	    </div>
+	    <div class="col col-sm-1 col p-2 bg-light border">
+	    	<%= link_to image_tag("view.png", height: 25), show_usuarioprojeto_path(usuarioprojeto), class: "nav-link" %>
+	    </div>
+    <% end %>
+  </div>
+</div>

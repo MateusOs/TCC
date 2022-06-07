@@ -1,0 +1,23 @@
+
+<%= form_for @usuarioprojeto, url: update_usuarioprojeto_path do |form| %>
+
+<div class="mb-3">
+	<%= form.label "Usuário" %>
+	<%= form.collection_select(:usuario_id, @usuarios, :id, :nome, {include_blank: true}, class: "form-select") %>
+</div>
+<div class="mb-3">
+	<%= form.label "Tipo de usuário" %>
+	<%= form.select :tipoUsuario, (["Coordenador", "Vice-coordenador", "Aluno", "Equipe executora"]), {include_blank: true}, class: "form-select" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Projeto" %>
+	<%= form.collection_select(:projeto_id, @projetos, :id, :nome, {include_blank: true}, class: "form-select") %>
+</div>
+<div class="mb-3">
+	<%= form.label "Carga horaria" %>
+	<%= form.text_field :cargaHoraria, class: "form-control" , placeholder:"Digite a carga horária" %>
+</div>
+<div class="mb-3">
+	<%= form.submit "Salvar", class:"btn btn-primary" %>
+</div>
+<% end %>

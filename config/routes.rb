@@ -41,4 +41,14 @@ Rails.application.routes.draw do
   put 'eventos/:id', to: 'eventos#update'
   delete 'eventos/:id/delete', to: 'eventos#destroy', as: 'destroy_evento'
   get 'eventos/:id/delete', to: 'eventos#destroy'
+
+  get 'usuarioprojetos', to: 'usuarioprojetos#index'
+  post 'usuarioprojetos/new', to: 'usuarioprojetos#create'
+  get 'usuarioprojetos/new', to: 'usuarioprojetos#new'
+  get 'usuarioprojetos/:id/edit', to: 'usuarioprojetos#edit', as: 'edit_usuarioprojeto'
+  get 'usuarioprojetos/:id', to: 'usuarioprojetos#show', as: 'show_usuarioprojeto'
+  patch 'usuarioprojetos/:id', to: 'usuarioprojetos#update', as: 'update_usuarioprojeto'
+  put 'usuarioprojetos/:id', to: 'usuarioprojetos#update'
+  delete 'usuarioprojetos/:id/delete', to: 'usuarioprojetos#destroy', as: 'destroy_usuarioprojeto'
+  get 'usuarioprojetos/:id/delete', to: 'usuarioprojetos#destroy'
 end

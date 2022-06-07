@@ -2,7 +2,7 @@ require 'bcrypt'
 class Projeto < ActiveRecord::Base
 	include BCrypt
 	belongs_to :usuario
-
+	has_many :projetos
 	validates :nome, presence: true
 	validates :numero, presence: true
 	validates :data, presence: true

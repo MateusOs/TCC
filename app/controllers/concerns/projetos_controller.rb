@@ -1,6 +1,7 @@
 class ProjetosController < ApplicationController
 	before_action :authorize, except: [:index, :show]
 	before_action :set_usuarios, only: [:edit, :update, :new, :create]
+	before_action :set_usuarioprojetos, only: [:show]
 	
 	def index
 		if params[:nomeProjeto]
@@ -65,5 +66,9 @@ class ProjetosController < ApplicationController
 
   	def set_usuarios
   		@usuarios = Usuario.where(tipoUsuario: "Professor")
+  	end
+
+  	def set_usuarioprojetos
+  		@usuarioprojeto = UsuarioProjeto.all
   	end
 end
