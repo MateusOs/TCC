@@ -52,6 +52,7 @@
     }
     .navbar{
         width: 230px;
+        height: 100vh;
         align-itens: flex-start;
     }
     .navbar-brand{
