@@ -1,5 +1,6 @@
 class RegistrationsController < ApplicationController
 	#before_action :authorize, except: [:new, :create, :edit]
+	before_action :authorize_admin, only: [:new, :create, :edit, :destroy, :show]
 
 	def index
 		@usuario = Usuario.all

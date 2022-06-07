@@ -2,7 +2,8 @@ class ProjetosController < ApplicationController
 	before_action :authorize, except: [:index, :show]
 	before_action :set_usuarios, only: [:edit, :update, :new, :create]
 	before_action :set_usuarioprojetos, only: [:show]
-	
+	before_action :autorize_prof, only: [:new, :create, :edit, :destroy]
+
 	def index
 		if params[:nomeProjeto]
 			@projeto = Projeto.where("lower(nome) like lower(?)", "%#{params[:nomeProjeto]}%")

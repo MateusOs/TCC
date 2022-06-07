@@ -8,6 +8,20 @@ class ApplicationController < ActionController::Base
 		end
 	end
 
+	def authorize_admin
+		unless current_usuario.tipoUsuario == "Administrador"
+			flash[:notice] = "Usuário não possui permssão"
+			redirect_to root_path
+		end
+	end
+
+	def autorize_prof
+		unless current_usuario.tipoUsuario == "Administrador" || current_usuario.tipoUsuario == "Professor"
+			flash[:notice] = "Usuário não possui permssão"
+			redirect_to root_path
+		end
+	end
+
 	def correct_usuario?
 		@usuario = Usuario.find(params[:id])
 		unless current_usuario == @usuario
