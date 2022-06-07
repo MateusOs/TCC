@@ -1,3 +1,14 @@
 <div class="d-flex align-items-center justify-content-left">
 	<h3>Eventos</h3>
 </div>
+
+
+<div>
+  <div class="row">
+  	<% @eventos.each do |evento| %>
+	    <div class="col col-sm-6 align-self-stretch">
+    	    <%= link_to evento.titulo, show_evento_path(evento), class: "nav-link" %>
+	    </div>
+    <% end %>
+  </div>
+</div>

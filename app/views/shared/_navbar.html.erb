@@ -12,37 +12,24 @@
           <li class="nav-item">
             <%= link_to "Sobre", about_path, class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Projetos
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-              <li>
-                <%= link_to "Novo projeto", projetos_new_path, class: "nav-link" %>
-              </li>
-              <li>
-                <%= link_to "Projetos", projetos_path, class: "nav-link" %>
-              </li>
-              <li>
-                <%= link_to "Novo eventos", eventos_new_path, class: "nav-link" %>
-              </li>
-              <li>
-                <%= link_to "Eventos", eventos_path, class: "nav-link" %>
-              </li>
-            </ul>
+          <li class="vr"></li>
+          <li>
+            <%= link_to "Novo projeto", projetos_new_path, class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Usuários
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-              <li>
-                <%= link_to "Novo usuário", registrations_new_path, class: "nav-link" %>
-              </li>
-              <li>
-                <%= link_to "Usuários", registrations_path, class: "nav-link" %>
-              </li>
-            </ul>
+          <li>
+            <%= link_to "Projetos", projetos_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to "Novo eventos", eventos_new_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to "Eventos", eventos_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to "Novo usuário", registrations_new_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to "Usuários", registrations_path, class: "nav-link" %>
           </li>
         </ul>
         <li>

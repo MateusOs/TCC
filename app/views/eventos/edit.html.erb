@@ -2,6 +2,10 @@
 
 <%= form_for @evento, url: update_evento_path do |form| %>
 <div class="mb-3">
+	<%= form.label "Título" %>
+	<%= form.text_field :titulo, class: "form-control", placeholder:"Título do evento" %>
+</div>
+<div class="mb-3">
 	<%= form.label "Descrição" %>
 	<%= form.text_field :descricao, :required => true, class: "form-text", placeholder:"Descrição do evento" %>
 </div>

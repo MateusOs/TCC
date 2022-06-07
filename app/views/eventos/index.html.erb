@@ -1,8 +1,20 @@
-<h1>Eventos</h1>
+<div>
+  <div class="row">
+    <div class="col col-sm-2 p-2">
+      <h1>Eventos</h1>
+    </div>
+    <div class="col col-sm-2 col p-2">
+      <%= link_to image_tag("new.png", height: 25) + "Novo evento", eventos_new_path, class: "nav-link" %>
+    </div>
+  </div>
+</div>
 
 <div>
   <div class="row">
-    <div class="col col-sm-5 p-2 bg-light border">
+    <div class="col col-sm-2 p-2 bg-light border">
+      <strong>Título</strong>
+    </div>
+    <div class="col col-sm-3 p-2 bg-light border">
       <strong>Descrição</strong>
     </div>
     <div class="col col-sm-1 col p-2 bg-light border">
@@ -26,7 +38,10 @@
 <div>
   <div class="row">
   	<% @evento.each do |evento| %>
-	    <div class="col col-sm-5 p-2 bg-light border">
+      <div class="col col-sm-2 p-2 bg-light border">
+        <%= evento.titulo %>
+      </div>
+	    <div class="col col-sm-3 p-2 bg-light border">
 	      <%= evento.descricao %>
 	    </div>
 	    <div class="col col-sm-1 col p-2 bg-light border">
