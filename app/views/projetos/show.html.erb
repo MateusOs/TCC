@@ -1,72 +1,73 @@
 <div>
-  <p>
+    <h3>Projeto</h3>
     <strong>Nome:</strong>
     <%= @projeto.nome %>
-  </p>
-  <p>
+    <br>
     <strong>Numero:</strong>
     <%= @projeto.numero %>
-  </p>
-  <p>
+    <br>
     <strong>Responsável pelo projeto:</strong>
     <%= @projeto.usuario.nome %>
-  </p>
-  <p>
+    <br>
     <strong>Data projeto:</strong>
     <%= @projeto.data.strftime("%d/%m/%Y") %>
-  </p>
-  <p>
+    <br>
     <strong>Data início:</strong>
     <%= @projeto.dataInicio == nil ? '' : @projeto.dataInicio.strftime("%d/%m/%Y") %>
-  </p>
-  <p>
+    <br>
     <strong>Data fim:</strong>
     <%= @projeto.dataFim == nil ? '' : @projeto.dataFim.strftime("%d/%m/%Y") %>
-  </p>
-  <p>
+    <br>
     <strong>Status:</strong>
     <%= @projeto.status %>
-  </p>
-  <p>
+    <br>
     <strong>Área:</strong>
     <%= @projeto.area %>
-  </p>
-  <p>
+    <br>
     <strong>Departamento:</strong>
     <%= @projeto.departamento %>
-  </p>
-  <p>
+    <br>
     <strong>Área temática:</strong>
     <%= @projeto.areaTematica %>
-  </p>
-  <p>
+    <br>
     <strong>Objetivo:</strong>
     <%= @projeto.objetivo %>
-  </p>
-  <p>
+    <br>
     <strong>Avaliação comitê:</strong>
     <%= @projeto.avaliacaoComite %>
-  </p>
-  <p>
+    <br>
     <strong>Avaliação depex:</strong>
     <%= @projeto.avaliacaoDepex %>
-  </p>
-  <p>
+    <br>
     <strong>Avaliação geral:</strong>
     <%= @projeto.avaliacaoGeral %>
-  </p>
+    <br>
   <div>
+    <h3>Usuários relacionados</h3>
     <% @usuarioprojeto.each do |usuarioprojeto| %>
       <% if usuarioprojeto.projeto.id = @projeto.id %>
-        <p>
           <strong>Tipo usuario:</strong>
           <%= usuarioprojeto.tipoUsuario %>
-        </p>
-        <p>
+          <br>
           <strong>Usuario:</strong>
           <%= usuarioprojeto.usuario.nome %>
-        </p>
       <% end %>    
+    <% end %>
+  </div>
+  <div>
+    <h3>Eventos do projeto</h3>
+    <% @eventos.each do |evento| %>
+      <% if evento.projeto.id = @projeto.id %>
+        <strong>Título</strong>
+        <%= evento.titulo %>
+        <br>
+        <strong>Descrição</strong>
+        <%= evento.descricao %>
+        <br>
+        <strong>Data do evento</strong>
+        <%= evento.data == nil ? '' : evento.data.strftime("%d/%m/%Y") %>
+        <br>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -4,14 +4,14 @@
       <h1>Usuários</h1>
     </div>
     <div class="col col-sm-2 col p-2">
-      <%= link_to image_tag("new.png", height: 25) + "Novo usuario", registrations_new_path, class: "nav-link" %>
+      <%= link_to image_tag("add.png", height: 25) + " Novo usuario", registrations_new_path, class: "nav-link" %>
     </div>
   </div>
 </div>
 
 <div>
   <div class="row">
-    <div class="col col-sm-3 p-2 bg-light border">
+    <div class="col col-sm-4 p-2 bg-light border">
       <strong>Nome</strong>
     </div>
     <div class="col col-sm-4 col p-2 bg-light border">
@@ -20,14 +20,7 @@
     <div class="col col-sm-2 col p-2 bg-light border">
       <strong>Tipo de usuário</strong>
     </div>
-    <div class="col col-sm-1 col p-2 bg-light border">
-      <strong>Editar</strong>
-    </div>
-    <div class="col col-sm-1 col p-2 bg-light border">
-      <strong>Deletar</strong>
-    </div>
-    <div class="col col-sm-1 col p-2 bg-light border">
-      <strong>Visualizar</strong>
+    <div class="col col-sm-2">
     </div>
   </div>
 </div>
@@ -35,7 +28,7 @@
 <div>
   <div class="row">
   	<% @usuario.each do |usuario| %>
-	    <div class="col col-sm-3 p-2 bg-light border">
+	    <div class="col col-sm-4 p-2 bg-light border">
 	      <%= usuario.nome %>
 	    </div>
 	    <div class="col col-sm-4 col p-2 bg-light border">
@@ -44,14 +37,12 @@
 	    <div class="col col-sm-2 col p-2 bg-light border">
 	      <td><%= usuario.tipoUsuario %></td>
 	    </div>
-	    <div class="col col-sm-1 col p-2 bg-light border">
-        <%= link_to image_tag("edit.jpg", height: 25), edit_registration_path(usuario), class: "nav-link" %>
-	    </div>
-	    <div class="col col-sm-1 col p-2 bg-light border">
-        <%= link_to image_tag("delete.png", height: 25), destroy_registration_path(usuario), :method => :delete %>
-	    </div>
-	    <div class="col col-sm-1 col p-2 bg-light border">
-	    	<%= link_to image_tag("view.png", height: 25), show_registration_path(usuario), class: "nav-link" %>
+	    <div class="col col-sm-2 col p-2 bg-light border">
+        <div class="d-flex"> 
+          <%= link_to image_tag("edit.png", height: 25), edit_registration_path(usuario), class: "nav-link" %>
+  	      <%= link_to image_tag("delete1.png", height: 25), destroy_registration_path(usuario), :method => :delete, class: "nav-link" %>
+	       	<%= link_to image_tag("view.png", height: 25), show_registration_path(usuario), class: "nav-link" %>
+        </div>
 	    </div>
     <% end %>
   </div>

@@ -3,7 +3,6 @@ class UsuarioprojetosController < ApplicationController
 	before_action :set_usuarios, only: [:edit, :update, :new, :create]
 	before_action :set_projetos, only: [:edit, :update, :new, :create]
 	
-	
 	def index
 		@usuarioprojeto = UsuarioProjeto.all
 	end

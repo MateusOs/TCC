@@ -2,13 +2,14 @@ class ProjetosController < ApplicationController
 	before_action :authorize, except: [:index, :show]
 	before_action :set_usuarios, only: [:edit, :update, :new, :create]
 	before_action :set_usuarioprojetos, only: [:show]
+	before_action :set_eventos, only: [:show]
 	before_action :autorize_prof, only: [:new, :create, :edit, :destroy]
 
 	def index
 		if params[:nomeProjeto]
-			@projeto = Projeto.where("lower(nome) like lower(?)", "%#{params[:nomeProjeto]}%")
+			@projeto = Projeto.where("lower(nome) like lower(?)", "%#{params[:nomeProjeto]}%").order("nome, departamento, area")
 		else
-			@projeto = Projeto.all
+			@projeto = Projeto.all.order("nome, departamento, area")
 		end
 		@usuarioLogado = current_usuario
 	end
@@ -33,6 +34,9 @@ class ProjetosController < ApplicationController
 
 	def edit
 		@projeto = Projeto.find(params[:id])
+		@projeto.data = @projeto.data == nil ? '' : @projeto.data.strftime("%d/%m/%Y")
+		@projeto.dataInicio = @projeto.dataInicio == nil ? '' : @projeto.dataInicio.strftime("%d/%m/%Y")
+		@projeto.dataFim = @projeto.dataFim == nil ? '' : @projeto.dataFim.strftime("%d/%m/%Y")
 		render :edit
 	end
 
@@ -73,4 +77,9 @@ class ProjetosController < ApplicationController
   	def set_usuarioprojetos
   		@usuarioprojeto = UsuarioProjeto.all
   	end
+
+  	def set_eventos
+  		@eventos = Evento.all
+  	end
+  	
 end

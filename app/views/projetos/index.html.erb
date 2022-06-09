@@ -5,10 +5,10 @@
     </div>
     <% if @usuarioLogado != nil %>
       <div class="col col-sm-2 col p-2" id="novoProjeto">
-        <%= link_to image_tag("new.png", height: 25) + "Novo projeto", projetos_new_path, class: "nav-link" %>
+        <%= link_to image_tag("add.png", height: 25) + " Novo projeto", projetos_new_path, class: "nav-link" %>
       </div>
       <div class="col col-sm-3 col p-2" id="novoEvento">
-        <%= link_to image_tag("new.png", height: 25) + "Adicionar usuario ao projeto", usuarioprojetos_new_path, class: "nav-link" %>
+        <%= link_to image_tag("add.png", height: 25) + " Adicionar usuario ao projeto", usuarioprojetos_new_path, class: "nav-link" %>
       </div>
     <% end %>
   </div>
@@ -27,22 +27,13 @@
     <div class="col col-sm-2 col p-2 bg-light border">
       <strong>Status</strong>
     </div>
-    <div class="col col-sm-1 col p-2 bg-light border">
+    <div class="col col-sm-2 col p-2 bg-light border">
       <strong>Área</strong>
     </div>
     <div class="col col-sm-2 col p-2 bg-light border">
       <strong>Departamento</strong>
     </div>
-    <% if @usuarioLogado != nil %>
-      <div class="col col-sm-1 col p-2 bg-light border">
-        <strong>Editar</strong>
-      </div>
-      <div class="col col-sm-1 col p-2 bg-light border">
-        <strong>Deletar</strong>
-      </div>
-    <% end %>
-    <div class="col col-sm-1 col p-2 bg-light border">
-      <strong>Visualizar</strong>
+    <div class="col col-sm-2">
     </div>
   </div>
 </div>
@@ -62,22 +53,20 @@
       <div class="col col-sm-2 col p-2 bg-light border">
         <td><%= projeto.status %></td>
       </div>
-      <div class="col col-sm-1 col p-2 bg-light border">
+      <div class="col col-sm-2 col p-2 bg-light border">
         <td><%= projeto.area %></td>
       </div>
       <div class="col col-sm-2 col p-2 bg-light border">
         <td><%= projeto.departamento %></td>
       </div>
-      <% if @usuarioLogado != nil %>
-  	    <div class="col col-sm-1 col p-2 bg-light border">
-          <%= link_to image_tag("edit.jpg", height: 25), edit_projeto_path(projeto), class: "nav-link" %>
-  	    </div>
-  	    <div class="col col-sm-1 col p-2 bg-light border">
-          <%= link_to image_tag("delete.png", height: 25), destroy_projeto_path(projeto), :method => :delete %>
-  	    </div>
-       <% end %> 
-	    <div class="col col-sm-1 col p-2 bg-light border">
-	    	<%= link_to image_tag("view.png", height: 25), show_projeto_path(projeto), class: "nav-link" %>
+      <div class="col col-sm-2 col p-2 bg-light border">
+        <div class="d-flex"> 
+          <% if @usuarioLogado != nil %>	    
+            <%= link_to image_tag("edit.png", height: 25), edit_projeto_path(projeto), class: "nav-link" %>
+            <%= link_to image_tag("delete1.png", height: 25), destroy_projeto_path(projeto), :method => :delete, class: "nav-link" %>
+          <% end %> 
+    	    <%= link_to image_tag("view.png", height: 25), show_projeto_path(projeto), class: "nav-link" %>
+        </div>
 	    </div>
     <% end %>
   </div>

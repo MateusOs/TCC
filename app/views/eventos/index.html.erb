@@ -1,17 +1,18 @@
+
 <div>
   <div class="row">
     <div class="col col-sm-2 p-2">
       <h1>Eventos</h1>
     </div>
     <div class="col col-sm-2 col p-2">
-      <%= link_to image_tag("new.png", height: 25) + "Novo evento", eventos_new_path, class: "nav-link" %>
+      <%= link_to image_tag("add.png", height: 25) + " Novo evento", eventos_new_path, class: "nav-link" %>
     </div>
   </div>
 </div>
 
 <div>
   <div class="row">
-    <div class="col col-sm-2 p-2 bg-light border">
+    <div class="col col-sm-3 p-2 bg-light border">
       <strong>Título</strong>
     </div>
     <div class="col col-sm-3 p-2 bg-light border">
@@ -23,14 +24,8 @@
     <div class="col col-sm-3 col p-2 bg-light border">
       <strong>Projeto</strong>
     </div>
-    <div class="col col-sm-1 col p-2 bg-light border">
-      <strong>Editar</strong>
-    </div>
-    <div class="col col-sm-1 col p-2 bg-light border">
-      <strong>Deletar</strong>
-    </div>
-    <div class="col col-sm-1 col p-2 bg-light border">
-      <strong>Visualizar</strong>
+    <div class="col col-sm-2">
+      
     </div>
   </div>
 </div>
@@ -38,7 +33,7 @@
 <div>
   <div class="row">
   	<% @evento.each do |evento| %>
-      <div class="col col-sm-2 p-2 bg-light border">
+      <div class="col col-sm-3 p-2 bg-light border">
         <%= evento.titulo %>
       </div>
 	    <div class="col col-sm-3 p-2 bg-light border">
@@ -50,14 +45,12 @@
 	    <div class="col col-sm-3 col p-2 bg-light border">
 	      <td><%= evento.projeto.nome %></td>
 	    </div>
-	    <div class="col col-sm-1 col p-2 bg-light border">
-        <%= link_to image_tag("edit.jpg", height: 25), edit_evento_path(evento), class: "nav-link" %>
-	    </div>
-	    <div class="col col-sm-1 col p-2 bg-light border">
-        <%= link_to image_tag("delete.png", height: 25), destroy_evento_path(evento), :method => :delete %>
-	    </div>
-	    <div class="col col-sm-1 col p-2 bg-light border">
-	    	<%= link_to image_tag("view.png", height: 25), show_evento_path(evento), class: "nav-link" %>
+	    <div class="col col-sm-2 col p-2 bg-light border">
+        <div class="d-flex"> 
+          <%= link_to image_tag("edit.png", height: 25), edit_evento_path(evento), class: "nav-link" %>
+          <%= link_to image_tag("delete1.png", height: 25), destroy_evento_path(evento), :method => :delete, class: "nav-link" %>
+  	    	<%= link_to image_tag("view.png", height: 25), show_evento_path(evento), class: "nav-link" %>
+        </div>
 	    </div>
     <% end %>
   </div>

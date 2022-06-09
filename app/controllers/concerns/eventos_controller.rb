@@ -3,7 +3,7 @@ class EventosController < ApplicationController
 	before_action :set_projetos, only: [:edit, :update, :new, :create]
 	
 	def index
-		@evento = Evento.all
+		@evento = Evento.all.order("data")
 	end
 
 	def show
@@ -26,6 +26,7 @@ class EventosController < ApplicationController
 
 	def edit
 		@evento = Evento.find(params[:id])
+		@evento.data = @evento.data.strftime("%d/%m/%Y")
 		render :edit
 	end
 
