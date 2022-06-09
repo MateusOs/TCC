@@ -10,6 +10,7 @@ class ProjetosController < ApplicationController
 		else
 			@projeto = Projeto.all
 		end
+		@usuarioLogado = current_usuario
 	end
 
 	def show
