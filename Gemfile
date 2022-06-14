@@ -15,7 +15,7 @@ gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '3543363026121ee28d98dfce
 gem "paperclip", "~> 6.0.0"
 
 gem 'pg'
-
+gem "aws-sdk-s3", require: false
 gem 'rails_12factor', group: :production
 
 # Use the Puma web server [https://github.com/puma/puma]
