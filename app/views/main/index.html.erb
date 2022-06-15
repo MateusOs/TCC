@@ -4,10 +4,15 @@
 
 
 <div>
-  <div class="row">
+  <div class="row" style="height: 200px">
   	<% @eventos.each do |evento| %>
-	    <div class="col col-sm-6 align-self-stretch">
-    	    <%= link_to evento.titulo, show_evento_path(evento), class: "nav-link" %>
+	    <div class="col col-sm-6 align-self-stretch" style="background-image: url(<%= rails_blob_url(evento.image) %>); background-size: cover; background-size: contain; background-repeat: no-repeat; background-position-x: center;">
+	    	<div style="font-size: 2.5em;">
+    	    	<%= link_to evento.titulo, show_evento_path(evento), class: "nav-link" %>
+    	    </div>
+    	    <div>
+    	    	<%= link_to evento.descricao, show_evento_path(evento), class: "nav-link" %>
+    	    </div>
 	    </div>
     <% end %>
   </div>
