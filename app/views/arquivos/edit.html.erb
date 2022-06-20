@@ -1,0 +1,28 @@
+<h1>Editar arquivos</h1>
+
+<%= form_for @arquivo, url: update_arquivo_path do |form| %>
+<div class="mb-3">
+	<%= form.label "Projeto"%>
+	<%= form.collection_select(:projeto_id, @projetos, :id, :nome, {include_blank: true}, class: "form-select") %>
+</div>
+<div class="mb-3">
+	<%= form.label "Data do arquivo" %>
+	<%= form.text_field :data, ({"data-provide" => 'datepicker', "data-date-format" => "dd/mm/yyyy", class: "form-date",placeholder: "DD/MM/YYYY"}) %>
+</div>
+
+<div class="mb-3">
+	<%= form.label "Link" %>
+	<%= form.text_field :link, class: "form-control", placeholder:"Link" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Imagem" %>
+	<%= form.file_field :figura, class: "form-control", placeholder:"Inserir imagem do projeto" %>
+</div>
+<div class="mb-3">
+	<%= form.label "Documento" %>
+	<%= form.file_field :documento, class: "form-control", placeholder:"Inserir documento do projeto" %>
+</div>
+<div class="mb-3">
+	<%= form.submit "Salvar", class:"btn btn-primary" %>
+</div>
+<% end %>

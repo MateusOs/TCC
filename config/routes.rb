@@ -51,4 +51,14 @@ Rails.application.routes.draw do
   put 'usuarioprojetos/:id', to: 'usuarioprojetos#update'
   delete 'usuarioprojetos/:id/delete', to: 'usuarioprojetos#destroy', as: 'destroy_usuarioprojeto'
   get 'usuarioprojetos/:id/delete', to: 'usuarioprojetos#destroy'
+
+  get 'arquivos', to: 'arquivos#index'
+  post 'arquivos/new', to: 'arquivos#create'
+  get 'arquivos/new', to: 'arquivos#new'
+  get 'arquivos/:id/edit', to: 'arquivos#edit', as: 'edit_arquivo'
+  get 'arquivos/:id', to: 'arquivos#show', as: 'show_arquivo'
+  patch 'arquivos/:id', to: 'arquivos#update', as: 'update_arquivo'
+  put 'arquivos/:id', to: 'arquivos#update'
+  delete 'arquivos/:id/delete', to: 'arquivos#destroy', as: 'destroy_arquivo'
+  get 'arquivos/:id/delete', to: 'arquivos#destroy'
 end

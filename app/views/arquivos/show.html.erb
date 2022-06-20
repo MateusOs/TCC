@@ -1,0 +1,22 @@
+<div>
+  <p>
+    <strong>Projeto:</strong>
+    <%= @arquivo.projeto.nome %>
+  </p>
+  <p>
+    <strong>Data:</strong>
+    <%= @arquivo.data.strftime("%d/%m/%Y") %>
+  </p>
+  <p>
+    <strong>Link:</strong>
+    <%= link_to arquivo.link, "http://#{arquivo.link}" %>
+  </p>
+  <p>
+    <strong>Imagem:</strong>
+    <%= image_tag @arquivo.figura %>
+  </p>
+  <p>
+    <strong>Documento:</strong>
+    <%= link_to @arquivo.documento.filename, rails_blob_path(@arquivo.documento, disposition: "attachment") %>
+  </p>
+</div>
