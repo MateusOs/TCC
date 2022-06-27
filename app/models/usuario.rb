@@ -6,7 +6,7 @@ class Usuario < ActiveRecord::Base
 	
 	validates :nome, presence: true
 	validates :login, presence: true
-	validates :password, presence: true
+	validates :password, presence: false
 	validates :email, presence: true
 	validates :tipoUsuario, presence: true
 	validates :fone, presence: false
