@@ -13,7 +13,7 @@ gem "sprockets-rails"
 #gem "sqlite3", "~> 1.4"
 
 gem 'pg'
-#gem "aws-sdk-s3", require: false
+gem "aws-sdk-s3", require: false
 gem 'rails_12factor', group: :production
 
 # Use the Puma web server [https://github.com/puma/puma]
